@@ -14,7 +14,7 @@ class SearchItemsController < ApplicationController
 
   def create
     if search_item_exists?
-      @search_item = SearchItem.all.where(user: @current_user).where(text: search_item_params[:text]).first
+      @search_item = SearchItem.all.where(user: @current_user).where(text: search_item_params[:text].strip.capitalize).first
       @search_item.update(rank: @search_item.rank + 1)
     else
       @search_item = SearchItem.new(search_item_params)
@@ -27,11 +27,11 @@ class SearchItemsController < ApplicationController
   private
 
   def search_item_params
-    params.permit(:text)
+    params.require(:search_item).permit(:text)
   end
 
   # check if the search item already exists
   def search_item_exists?
-    SearchItem.all.where(user: @current_user).where(text: search_item_params[:text]).exists?
+    SearchItem.all.where(user: @current_user).where(text: search_item_params[:text].strip.capitalize).exists?
   end
 end
