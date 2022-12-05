@@ -13,5 +13,9 @@ RSpec.describe User, type: :model do
     it 'is invalid with a username that is too short' do
       expect(build(:user, username: 'a')).to_not be_valid
     end
+
+    it 'is invalid with a username that is too long' do
+      expect(build(:user, username: 'a' * 21)).to_not be_valid
+    end
   end
 end
