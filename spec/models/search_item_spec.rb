@@ -9,5 +9,9 @@ RSpec.describe SearchItem, type: :model do
     it 'is invalid without a user' do
       expect(build(:search_item, user: nil)).to_not be_valid
     end
+
+    it 'is invalid without text' do
+      expect(build(:search_item, text: nil)).to_not be_valid
+    end
   end
 end
