@@ -19,8 +19,15 @@ RSpec.describe User, type: :model do
     end
 
     it 'is invalid with a duplicate username' do
-      create(:user, username: 'test')
-      expect(build(:user, username: 'test')).to_not be_valid
+      user = create(:user)
+      expect(build(:user, username: user.username)).to_not be_valid
+    end
+  end
+
+  describe '#capitalize_name' do
+    it 'capitalizes the name' do
+      user = create(:user, username: '  jaNe doe')
+      expect(user.username).to eq('Jane doe')
     end
   end
 end
