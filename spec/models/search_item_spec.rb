@@ -34,5 +34,9 @@ RSpec.describe SearchItem, type: :model do
     it 'is invalid with a rank that is not an integer' do
       expect(build(:search_item, rank: 1.5)).to_not be_valid
     end
+
+    it 'is invalid with a rank that is less than 1' do
+      expect(build(:search_item, rank: 0)).to_not be_valid
+    end
   end
 end
