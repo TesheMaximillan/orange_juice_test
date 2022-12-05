@@ -26,7 +26,12 @@ RSpec.describe User, type: :model do
 
   describe '#capitalize_name' do
     it 'capitalizes the name' do
-      user = create(:user, username: '  jaNe doe')
+      user = create(:user, username: 'jaNe doe')
+      expect(user.username).to eq('Jane doe')
+    end
+
+    it 'removes whitespace' do
+      user = create(:user, username: '  jaNe doe  ')
       expect(user.username).to eq('Jane doe')
     end
   end
