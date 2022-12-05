@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.main-title {
+    color: var(--color-primary);
+    letter-spacing: 0.1em;
+}
+
+.sub-title {
+    color: var(--light-grey-2);
+    margin-left: 1rem;
+    letter-spacing: 0.1em;
+}
