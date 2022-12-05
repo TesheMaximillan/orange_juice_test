@@ -24,4 +24,11 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('new')
     end
   end
+
+  describe 'users#create' do
+    it 'should create a new user' do
+      post user_index_path, params: { user: { username: 'test1' } }
+      expect(response).to have_http_status(200)
+    end
+  end
 end
