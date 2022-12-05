@@ -7,15 +7,9 @@ class UserController < ApplicationController
     @user = User.create(user_params)
 
     if @user.valid?
-      render json: {
-        logged_in: true,
-        user: {
-          id: user.id,
-          username: user.username
-        }
-      }, status: :created
+      redirect_to search_items_path, notice: 'User created!'
     else
-      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+      render :new, alert: 'User not created!'
     end
   end
 
@@ -23,20 +17,15 @@ class UserController < ApplicationController
     @user = User.find_by(username: params[:username])
 
     if @user
-      render json: {
-        logged_in: true,
-        user: {
-          id: user.id,
-          username: user.username
-        }
-      }, status: :ok
+      redirect_to search_items_path, notice: 'Logged in!'
     else
-      render json: { errors: ['Invalid username'] }, status: :unauthorized
+      redirect_to login_path, notice: 'Invalid username'
     end
   end
 
   def logout
-    render json: { logged_in: false, user: {} }, status: :ok
+    session[:user_id] = nil
+    redirect_to login_path, notice: 'Logged out!'
   end
 
   private

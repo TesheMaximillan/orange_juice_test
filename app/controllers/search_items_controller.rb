@@ -1,5 +1,10 @@
 class SearchItemsController < ApplicationController
   include CurrentUserConcern
+
+  def new
+    @search_item = SearchItem.new
+  end
+
   def index
     @search_items = SearchItem.all.where(user: @current_user).order(rank: :desc)
     @search_items.map do |search_item|
