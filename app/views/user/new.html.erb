@@ -1,1 +1,11 @@
-<h2>Registration</h2>
+<%= form_for @user, :url => { :action => "create" } do |f| %>
+  <div class="form-group">
+    <div class="form-group__field"
+      <%= f.label :username, class: "hidden" %><br>
+      <%= f.text_field :username, class: "form-group__field--input", autofocus:true, required:true, autocomplete: true, placeholder: "Name"%>
+    </div>
+    <div class="form-group__actions">
+      <%= f.submit "Create", class: "submit-btn" %><br>
+    </div>
+  </div>
+<% end %>
