@@ -5,17 +5,16 @@ RSpec.describe 'SearchItems', type: :request do
     @user = create(:user)
     @search_item = create(:search_item, user: @user)
   end
-  describe 'GET /index' do
-    it 'returns http success' do
-      get '/search_items/index'
-      expect(response).to have_http_status(:success)
-    end
-  end
 
-  describe 'GET /create' do
-    it 'returns http success' do
-      get '/search_items/create'
-      expect(response).to have_http_status(:success)
+  describe 'search_items#index' do
+    it 'should return a 200 response' do
+      get search_items_path
+      expect(response).to have_http_status(200)
+    end
+
+    it 'should render the index template' do
+      get search_items_path
+      expect(response).to render_template('index')
     end
   end
 end
