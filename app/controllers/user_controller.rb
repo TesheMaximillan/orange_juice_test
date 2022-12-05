@@ -13,21 +13,6 @@ class UserController < ApplicationController
     end
   end
 
-  def login
-    @user = User.find_by(username: params[:username])
-
-    if @user
-      redirect_to search_items_path, notice: 'Logged in!'
-    else
-      redirect_to login_path, notice: 'Invalid username'
-    end
-  end
-
-  def logout
-    session[:user_id] = nil
-    redirect_to login_path, notice: 'Logged out!'
-  end
-
   private
 
   def user_params
