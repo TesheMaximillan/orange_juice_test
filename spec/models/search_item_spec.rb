@@ -13,5 +13,9 @@ RSpec.describe SearchItem, type: :model do
     it 'is invalid without text' do
       expect(build(:search_item, text: nil)).to_not be_valid
     end
+
+    it 'is invalid with text that is too short' do
+      expect(build(:search_item, text: 'a')).to_not be_valid
+    end
   end
 end
