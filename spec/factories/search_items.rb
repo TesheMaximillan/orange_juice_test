@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :search_item do
-    user { nil }
+    user { User.first || create(:user) }
     text { "MyString" }
     rank { 1 }
   end
