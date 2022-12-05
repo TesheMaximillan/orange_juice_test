@@ -2,7 +2,8 @@ class SearchItem < ApplicationRecord
   belongs_to :user
   before_save :capitalize_text
 
-  validates :text, presence: true, uniqueness: true, length: { minimum: 3, maximum: 200 }
+  validates :text, presence: true, uniqueness: true, length: { minimum: 3, maximum: 200 },
+            format: { with: /\?$/, message: "must end with a question mark" }
   validates :rank, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
   #Remove whitespace and capitalize text
