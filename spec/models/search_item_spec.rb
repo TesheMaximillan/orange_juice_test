@@ -57,4 +57,14 @@ RSpec.describe SearchItem, type: :model do
       expect(build(:search_item, text: 'My search')).to_not be_valid
     end
   end
+
+  describe '#one to many association' do
+    it 'has many search items' do
+      user = create(:user)
+      search_item_1 = create(:search_item, user: user, text: 'My search1?')
+      search_item_2 = create(:search_item, user: user, text: 'My search2?')
+
+      expect(user.search_items).to eq([search_item_1, search_item_2])
+    end
+  end
 end
