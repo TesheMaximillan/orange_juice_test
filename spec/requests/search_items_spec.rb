@@ -7,14 +7,14 @@ RSpec.describe "SearchItems", type: :request do
   end
   describe "GET /index" do
     it "returns http success" do
-      get "/search_item/index"
+      get "/search_items/index"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /create" do
     it "returns http success" do
-      get "/search_item/create"
+      get "/search_items/create"
       expect(response).to have_http_status(:success)
     end
   end

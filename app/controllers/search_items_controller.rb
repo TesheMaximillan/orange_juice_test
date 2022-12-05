@@ -1,4 +1,4 @@
-class SearchItemController < ApplicationController
+class SearchItemsController < ApplicationController
   include CurrentUserConcern
   def index
     @search_items = SearchItem.all.where(user: @current_user).order(rank: :desc)

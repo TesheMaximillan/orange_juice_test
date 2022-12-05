@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'search_item/index'
-  get 'search_item/create'
-  get 'user/index'
-  get 'user/show'
-  get 'user/create'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'user#login', as: 'login'
+  resources :user, only: [:new, :create]
+  delete :logout, to: "user#logout"
+  if :user
+    get :logged_in, to: "user#logged_in"
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
