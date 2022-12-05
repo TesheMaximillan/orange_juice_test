@@ -26,5 +26,9 @@ RSpec.describe SearchItem, type: :model do
       search_item = create(:search_item)
       expect(build(:search_item, text: search_item.text)).to_not be_valid
     end
+
+    it 'is invalid without a rank' do
+      expect(build(:search_item, rank: nil)).to_not be_valid
+    end
   end
 end
