@@ -5,5 +5,9 @@ RSpec.describe SearchItem, type: :model do
     it 'has a valid factory' do
       expect(build(:search_item)).to be_valid
     end
+
+    it 'is invalid without a user' do
+      expect(build(:search_item, user: nil)).to_not be_valid
+    end
   end
 end
