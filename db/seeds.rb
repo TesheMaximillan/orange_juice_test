@@ -20,16 +20,16 @@ puts '[db/seeds.rb] Creating users...'
 User.create(username: 'Jane Doe')
 
 SearchItem.create([
-                    { user: User.all.sample, text: 'What is ruby on rails?', rank: 1 },
-                    { user: User.all.sample, text: 'What is ruby?', rank: 2 },
-                    { user: User.all.sample, text: 'What is rails?', rank: 3 },
-                    { user: User.all.sample, text: 'What is TDD?', rank: 4 },
-                    { user: User.all.sample, text: 'What is race condition?', rank: 5 },
-                    { user: User.all.sample, text: 'What is concurrency?', rank: 6 },
-                    { user: User.all.sample, text: 'What is parallelism?', rank: 7 },
-                    { user: User.all.sample, text: 'What is thread?', rank: 8 },
-                    { user: User.all.sample, text: 'What is process?', rank: 9 },
-                    { user: User.all.sample, text: 'What is database?', rank: 10 }
+                    { user: User.all.sample, text: 'What is ruby on rails?' },
+                    { user: User.all.sample, text: 'What is ruby?' },
+                    { user: User.all.sample, text: 'What is rails?' },
+                    { user: User.all.sample, text: 'What is TDD?' },
+                    { user: User.all.sample, text: 'What is race condition?' },
+                    { user: User.all.sample, text: 'What is concurrency?' },
+                    { user: User.all.sample, text: 'What is parallelism?' },
+                    { user: User.all.sample, text: 'What is thread?' },
+                    { user: User.all.sample, text: 'What is process?' },
+                    { user: User.all.sample, text: 'What is database?' },
                   ])
 
 puts '[db/seeds.rb] Done...'
