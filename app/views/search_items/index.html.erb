@@ -1,2 +1,7 @@
-<h1>SearchItem#index</h1>
-<p>Find me in app/views/search_item/index.html.erb</p>
+<%= form_for @search_item, method: :post, url: search_items_path, data: { turbo: false } do |f| %>
+  <div class="search-form">
+    <%= f.label :text %>
+    <%= f.text_field :text, placeholder: "Search", class: "search-form__input" %>
+    <%= f.submit "Search", class: "search-form__button" %>
+  </div>
+<% end %>
