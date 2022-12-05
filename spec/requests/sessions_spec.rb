@@ -1,25 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
-  describe "GET /new" do
-    it "returns http success" do
-      get "/sessions/new"
-      expect(response).to have_http_status(:success)
+  describe "sessions#create" do
+    it "should login" do
+      user = User.create(username: "test2")
+      post sessions_path, params: { username: user.username }
+      expect(response).to have_http_status(302)
     end
   end
 
-  describe "GET /create" do
-    it "returns http success" do
-      get "/sessions/create"
-      expect(response).to have_http_status(:success)
+  describe "sessions#logout" do
+    it "should logout" do
+      user = User.create(username: "test3")
+      post sessions_path, params: { username: user.username }
+      delete logout_path
+      expect(response).to have_http_status(302)
     end
   end
 
-  describe "GET /logout" do
-    it "returns http success" do
-      get "/sessions/logout"
-      expect(response).to have_http_status(:success)
+  describe "sessions#new" do
+    it "should return a 200 response" do
+      get new_session_path
+      expect(response).to have_http_status(200)
     end
   end
-
 end
