@@ -15,9 +15,20 @@ require 'factory_bot'
 User.destroy_all
 SearchItem.destroy_all
 
-puts "[db/seeds.rb] Creating users..."
+puts '[db/seeds.rb] Creating users...'
 
 FactoryBot.create_list(:user, 10)
-FactoryBot.create_list(:search_item, 10)
+SearchItem.create([
+                    { user: User.all.sample, text: 'What is ruby on rails?', rank: 1 },
+                    { user: User.all.sample, text: 'What is ruby?', rank: 2 },
+                    { user: User.all.sample, text: 'What is rails?', rank: 3 },
+                    { user: User.all.sample, text: 'What is TDD?', rank: 4 },
+                    { user: User.all.sample, text: 'What is race condition?', rank: 5 },
+                    { user: User.all.sample, text: 'What is concurrency?', rank: 6 },
+                    { user: User.all.sample, text: 'What is parallelism?', rank: 7 },
+                    { user: User.all.sample, text: 'What is thread?', rank: 8 },
+                    { user: User.all.sample, text: 'What is process?', rank: 9 },
+                    { user: User.all.sample, text: 'What is database?', rank: 10 }
+                  ])
 
-puts "[db/seeds.rb] Done."
+puts '[db/seeds.rb] Done.'
