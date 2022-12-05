@@ -39,4 +39,16 @@ RSpec.describe SearchItem, type: :model do
       expect(build(:search_item, rank: 0)).to_not be_valid
     end
   end
+
+  describe '#capitalize_text' do
+    it 'capitalizes the text' do
+      search_item = create(:search_item, text: '  my seARch')
+      expect(search_item.text).to eq('My search')
+    end
+
+    it 'removes whitespace' do
+      search_item = create(:search_item, text: '  my seARch  ')
+      expect(search_item.text).to eq('My search')
+    end
+  end
 end
