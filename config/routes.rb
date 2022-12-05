@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search_item/index'
+  get 'search_item/create'
   get 'user/index'
   get 'user/show'
   get 'user/create'
