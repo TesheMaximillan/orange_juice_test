@@ -19,7 +19,7 @@ RSpec.describe SearchItem, type: :model do
     end
 
     it 'is invalid with text that is too long' do
-      expect(build(:search_item, text: 'a' * 200 + '?')).to_not be_valid
+      expect(build(:search_item, text: "#{'a' * 200}?")).to_not be_valid
     end
 
     it 'is invalid with a duplicate text' do
@@ -61,10 +61,10 @@ RSpec.describe SearchItem, type: :model do
   describe '#one to many association' do
     it 'has many search items' do
       user = create(:user)
-      search_item_1 = create(:search_item, user: user, text: 'My search1?')
-      search_item_2 = create(:search_item, user: user, text: 'My search2?')
+      search_item1 = create(:search_item, user:, text: 'My search1?')
+      search_item2 = create(:search_item, user:, text: 'My search2?')
 
-      expect(user.search_items).to eq([search_item_1, search_item_2])
+      expect(user.search_items).to eq([search_item1, search_item2])
     end
   end
 end

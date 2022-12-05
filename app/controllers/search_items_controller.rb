@@ -2,9 +2,9 @@ class SearchItemsController < ApplicationController
   include CurrentUserConcern
   def index
     @search_items = SearchItem.all.where(user: @current_user).order(rank: :desc)
-    @search_items.map { |search_item|
-                   search_item.attributes.except('user_id', 'created_at', 'updated_at')
-                 }
+    @search_items.map do |search_item|
+      search_item.attributes.except('user_id', 'created_at', 'updated_at')
+    end
   end
 
   def create

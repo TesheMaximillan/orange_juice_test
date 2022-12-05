@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -12,7 +11,7 @@ class UserController < ApplicationController
         logged_in: true,
         user: {
           id: user.id,
-          username: user.username,
+          username: user.username
         }
       }, status: :created
     else
@@ -28,7 +27,7 @@ class UserController < ApplicationController
         logged_in: true,
         user: {
           id: user.id,
-          username: user.username,
+          username: user.username
         }
       }, status: :ok
     else
@@ -37,7 +36,7 @@ class UserController < ApplicationController
   end
 
   def logout
-    render json: {logged_in: false, user: {}}, status: :ok
+    render json: { logged_in: false, user: {} }, status: :ok
   end
 
   private

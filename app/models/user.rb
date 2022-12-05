@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 20 }
 
-  #Remove whitespace and capitalize name
+  # Remove whitespace and capitalize name
   def capitalize_name
     self.username = username.strip.capitalize
   end
