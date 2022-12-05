@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+unless Rails.env.development?
+  puts "[db/seeds.rb] Seed data is being loaded in development mode. not #{Rails.env.production?}"
+  exit 0
+end
+
+require 'factory_bot'
+
+User.destroy_all
+SearchItem.destroy_all
+
+puts "[db/seeds.rb] Creating users..."
+
+FactoryBot.create_list(:user, 10)
+FactoryBot.create_list(:search_item, 10)
+
+puts "[db/seeds.rb] Done."

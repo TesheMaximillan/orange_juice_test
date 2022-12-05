@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :search_items
+  has_many :search_items, dependent: :destroy
   before_save :capitalize_name
 
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 20 }
