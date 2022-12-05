@@ -1,1 +1,7 @@
-<h1>SearchItem</h1>
+<%= form_for @search_item, method: :post, url: search_items_path, data: { turbo: false } do |f| %>
+  <div class="search-form">
+    <%= f.label :text %>
+    <%= f.text_field :text, placeholder: "Search", class: "search-form__input" %>
+    <%= f.submit "Search", class: "search-form__button" %>
+  </div>
+<% end %>
