@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to search_items_path, notice: 'Logged in!'
+      redirect_to new_search_item_path, notice: 'Logged in!'
     else
       redirect_to new_session_path, alert: 'User not found!'
     end
