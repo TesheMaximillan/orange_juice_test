@@ -17,7 +17,8 @@ SearchItem.destroy_all
 
 puts '[db/seeds.rb] Creating users...'
 
-FactoryBot.create_list(:user, 10)
+User.create(username: 'Jane Doe')
+
 SearchItem.create([
                     { user: User.all.sample, text: 'What is ruby on rails?', rank: 1 },
                     { user: User.all.sample, text: 'What is ruby?', rank: 2 },
@@ -31,4 +32,4 @@ SearchItem.create([
                     { user: User.all.sample, text: 'What is database?', rank: 10 }
                   ])
 
-puts '[db/seeds.rb] Done.'
+puts '[db/seeds.rb] Done...'
