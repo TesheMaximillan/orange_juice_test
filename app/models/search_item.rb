@@ -2,11 +2,10 @@ class SearchItem < ApplicationRecord
   belongs_to :user
   before_save :capitalize_text
 
-  validates :text, presence: true, uniqueness: true,
+  validates :text, presence: true,
                    length: { minimum: 3, maximum: 200, message: 'Text must be between 3 and 200 characters' }
   validates :rank, presence: true,
-                   numericality: { only_integer: true, greater_than_or_equal_to: 1,
-                                   less_than_or_equal_to: 10, message: 'Rank must be between 1 and 10' }
+                   numericality: { only_integer: true, greater_than_or_equal_to: 1 }
   validate :text_must_be_a_question
 
   # Remove whitespace and capitalize text
