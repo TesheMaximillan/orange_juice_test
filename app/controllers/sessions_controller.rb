@@ -10,18 +10,18 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to search_items_path, notice: 'Logged in!'
     else
-      redirect_to login_path, alert: 'User not found!'
+      redirect_to sessions_path, alert: 'User not found!'
     end
   end
 
   def logout
     reset_session
-    redirect_to login_path, notice: 'Logged out!'
+    redirect_to sessions_path, notice: 'Logged out!'
   end
 
   private
 
   def session_params
-    params.require(:session).permit(:username)
+    params.permit(:username)
   end
 end
