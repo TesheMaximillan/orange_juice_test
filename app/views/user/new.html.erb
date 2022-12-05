@@ -10,6 +10,7 @@
       <%= f.label :username, class: "form-group__field--hidden" %><br>
       <%= f.text_field :username, class: "form-group__field--input", autofocus:true, required:true, autocomplete: true, placeholder: "Userame"%>
     </div>
-    <%= f.submit "Create", class: "submit-btn" %><br>
+    <%= f.submit "Register", class: "submit-btn" %>
+    <%= link_to "Login", new_session_path, class: "nav-btn" %>
   </div>
 <% end %>
