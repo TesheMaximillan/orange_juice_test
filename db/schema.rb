@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_064630) do
   create_table "search_items", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "text", null: false
-    t.integer "rank", null: false
+    t.integer "rank", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["text"], name: "index_search_items_on_text", unique: true
