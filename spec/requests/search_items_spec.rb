@@ -17,4 +17,16 @@ RSpec.describe 'SearchItems', type: :request do
       expect(response).to render_template('index')
     end
   end
+
+  describe 'search_items#new' do
+    it 'should return a 200 response' do
+      get new_search_item_path
+      expect(response).to have_http_status(200)
+    end
+
+    it 'should render the new template' do
+      get new_search_item_path
+      expect(response).to render_template('new')
+    end
+  end
 end
