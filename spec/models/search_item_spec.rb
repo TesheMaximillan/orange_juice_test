@@ -15,11 +15,11 @@ RSpec.describe SearchItem, type: :model do
     end
 
     it 'is invalid with text that is too short' do
-      expect(build(:search_item, text: 'a')).to_not be_valid
+      expect(build(:search_item, text: 'a?')).to_not be_valid
     end
 
     it 'is invalid with text that is too long' do
-      expect(build(:search_item, text: 'a' * 201)).to_not be_valid
+      expect(build(:search_item, text: 'a' * 200 + '?')).to_not be_valid
     end
 
     it 'is invalid with a duplicate text' do
