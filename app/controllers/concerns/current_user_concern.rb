@@ -6,6 +6,6 @@ module CurrentUserConcern
   end
 
   def set_current_user
-    @current_user = User.find(params[:user_id]) if params[:user_id]
+    @current_user = User.find_by(username: params[:username]) if params[:username]
   end
 end

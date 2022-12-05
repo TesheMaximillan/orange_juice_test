@@ -75,4 +75,30 @@
       background-color: var(--main-dark);
     }
   }
+
+  .nav-btn {
+    align-self: flex-end;
+    margin-top: 1rem;
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-family: inherit;
+    padding: 1rem;
+    border-bottom: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--white);
+    color: var(--color-primary);
+    cursor: pointer;
+    box-shadow: var(--box-shadow-1);
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &--active {
+      transform: scale(0.98);
+    }
+  }
 }

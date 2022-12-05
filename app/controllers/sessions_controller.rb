@@ -4,24 +4,25 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: session_params[:username])
+    username = session_params[:username].strip.capitalize
+    @user = User.find_by(username: username)
 
     if @user
       session[:user_id] = @user.id
       redirect_to search_items_path, notice: 'Logged in!'
     else
-      redirect_to sessions_path, alert: 'User not found!'
+      redirect_to new_session_path, alert: 'User not found!'
     end
   end
 
   def logout
     reset_session
-    redirect_to sessions_path, notice: 'Logged out!'
+    redirect_to new_session_path, notice: 'Logged out!'
   end
 
   private
 
   def session_params
-    params.permit(:username)
+    params.require(:user).permit(:username)
   end
 end
