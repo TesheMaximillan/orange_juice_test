@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     username = session_params[:username].strip.capitalize
-    @user = User.find_by(username: username)
+    @user = User.find_by(username:)
 
     if @user
       session[:user_id] = @user.id
