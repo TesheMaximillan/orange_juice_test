@@ -1,6 +1,6 @@
 
 ***
->> # Help Juic Test 🟢
+>> # HelpJuice Test 🟢
 ***
 
 ## Setup
@@ -28,7 +28,7 @@ To get a local copy up and running follow this simple step:
 ### Basic Features:
 ***
 
-> ##Home page
+### Home page
 * The home page has a link to the sign up and login page.
 
 > **Sign up and Log in Pages**
@@ -82,7 +82,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-> HelpJuice
+> ### HelpJuice
 
 ## 📝 License
 
