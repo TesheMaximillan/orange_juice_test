@@ -1,0 +1,7 @@
+<%= form_with url: search_items_path, method: :post do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text, value: params[:text], oninput: "this.form.requestSubmit()", placeholder: "Search", class: "search-form__input" %>
+  <%= f.submit "Search", class: "search-form__button", name: "commit", value: "Search" %>
+<% end %>
+
+<div id="search_results"></div>
