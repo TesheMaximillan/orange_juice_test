@@ -60,7 +60,7 @@ To get a local copy up and running follow this simple step:
 
 ## Live Demo
 
-[Live Demo](https://coolbudgetapp.herokuapp.com/)
+[Live Demo](https://happyjuice-test.onrender.com/)
 
 ## Authors
 
@@ -74,7 +74,7 @@ To get a local copy up and running follow this simple step:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/TesheMaximillan/BlogApp/issues).
+Feel free to check the [issues page](https://github.com/TesheMaximillan/orange_juice_test/issues).
 
 ## Show your support
 
