@@ -15,12 +15,48 @@
  */
 
 .main-title {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--white);
     color: var(--color-primary);
     letter-spacing: 0.1em;
 }
 
 .sub-title {
-    color: var(--light-grey-2);
+    color: var(--third);
     margin-left: 1rem;
     letter-spacing: 0.1em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--light-grey-2);
+}
+
+.logout {
+    width: 10rem;
+    padding: 0.5rem;
+    color: var(--third);
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: inherit;
+    border: 1px solid var(--third-light);
+    border-radius: 5rem;
+    background-color: var(--third-light);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--third);
+        color: var(--white);
+        transform: translateX(0.2rem);
+    }
+
+    &:active {
+        transform: translateX(-0.2rem);
+    }
 }
