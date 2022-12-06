@@ -12,7 +12,12 @@
 
   <body>
     <div class="container">
-      <h1><span class="main-title">HelpJuice</span><span class="sub-title">Test</span></h1>
+      <div class="header">
+        <h1><span class="main-title">HelpJuice</span><span class="sub-title">Test</span></h1>
+        <% if @current_user %>
+          <%=  button_to "Logout", logout_path, method: :delete, class: 'logout'  %>
+        <%  end %>
+      </div>
       <%= render "layouts/alert" %>
       <%= yield %>
     </div>
