@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: orange_juice_test_production
   username: orange_juice_test
   password: <%= ENV["ORANGE_JUICE_TEST_DATABASE_PASSWORD"] %>
