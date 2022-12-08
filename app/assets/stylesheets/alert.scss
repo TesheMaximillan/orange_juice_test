@@ -1,0 +1,28 @@
+@mixin common-alert($background, $border) {
+  width: 100%;
+  padding: 1rem;
+  background-color: $background;
+  border-top: 1rem solid $border;
+}
+
+.notice {
+  @include common-alert(var(--second-light), var(--second));
+
+  .icon-success {
+    color: var(--second);
+    margin-right: 1rem;
+  }
+}
+
+.alert {
+  @include common-alert(var(--third-light), var(--third));
+
+  .icon-warning {
+    color: var(--third);
+    margin-right: 1rem;
+  }
+}
+
+.message-list {
+  list-style: none;
+}

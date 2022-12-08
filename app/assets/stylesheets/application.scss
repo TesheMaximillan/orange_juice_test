@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.main-title {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    color: var(--color-primary);
+    letter-spacing: 0.1em;
+}
+
+.sub-title {
+    color: var(--third);
+    margin-left: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--light-grey-2);
+}
+
+.logout {
+    width: 10rem;
+    padding: 0.5rem;
+    color: var(--third);
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: inherit;
+    border: 1px solid var(--third-light);
+    border-radius: 5rem;
+    background-color: var(--third-light);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--third);
+        color: var(--white);
+        transform: translateX(0.2rem);
+    }
+
+    &:active {
+        transform: translateX(-0.2rem);
+    }
+}

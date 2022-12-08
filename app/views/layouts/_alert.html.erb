@@ -1,0 +1,12 @@
+<% if notice&.present? %>
+  <div class="notice" role="alert">
+    <i class="fa-regular fa-circle-check icon-success" ></i>
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert&.present? %>
+  <div class="alert" role="alert">
+    <i class="fa-solid fa-circle-exclamation icon-warning"></i>
+    <%= alert %>
+  </div>
+<% end %>

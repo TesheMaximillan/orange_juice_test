@@ -11,6 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="header">
+        <h1><span class="main-title">HelpJuice</span><span class="sub-title">Test</span></h1>
+        <% if @current_user %>
+          <%=  button_to "Logout", logout_path, method: :delete, class: 'logout'  %>
+        <%  end %>
+      </div>
+      <%= render "layouts/alert" %>
+      <%= yield %>
+    </div>
   </body>
 </html>
